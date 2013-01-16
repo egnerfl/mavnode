@@ -124,7 +124,7 @@ myMav_mp.on("messageReceived", function(message) {
 	if (DEBUG > 1) {
 		console.log("Message ID " + message.id + " from MP to APM");
 	}
-	server.send(message.buffer,0,message.buffer.length,MP_IP, APM_IP, function(err, bytes) {});
+	server.send(message.buffer,0,message.buffer.length,APM_PORT, APM_IP, function(err, bytes) {});
 	serialPort.write(message.buffer);
 });
 
