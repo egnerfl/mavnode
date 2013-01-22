@@ -5,7 +5,7 @@ var url = require('url');
 var SerialPort = require("serialport").SerialPort
 
 // ------- Configuration Section -------
-var DEBUG = 2;	//Debug Level
+var DEBUG = 0;	//Debug Level
 				//	0 - Off
 				// 	1 - Errors
 				//	2 - Errors + Useful Info
@@ -25,7 +25,7 @@ var BAUD = 115200;
 
 //Quick and dirty MAVLink and server set up, one in and one out
 // _mp refers to (from) "Mission Planner"
-var myMav = new mavlink();
+var myMav = new mavlink(255,1);
 var myMav_mp = new mavlink();
 var server = dgram.createSocket("udp4");
 var server_mp = dgram.createSocket("udp4");
