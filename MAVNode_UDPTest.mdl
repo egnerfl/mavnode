@@ -1,12 +1,12 @@
 Model {
   Name			  "MAVNode_UDPTest"
-  Version		  7.7
+  Version		  7.6
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.5"
+    ComputedModelVersion    "1.10"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -24,11 +24,11 @@ Model {
   Creator		  "ttom"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "ttom"
+  LastModifiedBy	  "Owen"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jan 16 15:14:09 2013"
-  RTWModifiedTimeStamp	  280249490
-  ModelVersionFormat	  "1.%<AutoIncrement:5>"
+  LastModifiedDate	  "Tue Jan 22 15:35:46 2013"
+  RTWModifiedTimeStamp	  280769248
+  ModelVersionFormat	  "1.%<AutoIncrement:10>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -60,19 +60,6 @@ Model {
   AccelTemplateMakefile	  "accel_default_tmf"
   AccelMakeCommand	  "make_rtw"
   TryForcingSFcnDF	  off
-  Object {
-    $PropName		    "DataLoggingOverride"
-    $ObjectID		    1
-    $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "UDPTest"
-    overrideMode_	    [0.0]
-    Array {
-      Type		      "Cell"
-      Dimension		      1
-      Cell		      "UDPTest"
-      PropName		      "logAsSpecifiedByModels_"
-    }
-  }
   RecordCoverage	  off
   CovPath		  "/"
   CovSaveName		  "covdata"
@@ -115,14 +102,14 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      2
-      Version		      "1.11.0"
+      $ObjectID		      1
+      Version		      "1.10.0"
       Array {
 	Type			"Handle"
 	Dimension		8
 	Simulink.SolverCC {
-	  $ObjectID		  3
-	  Version		  "1.11.0"
+	  $ObjectID		  2
+	  Version		  "1.10.0"
 	  StartTime		  "0.0"
 	  StopTime		  "30"
 	  AbsTol		  "auto"
@@ -155,8 +142,8 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  4
-	  Version		  "1.11.0"
+	  $ObjectID		  3
+	  Version		  "1.10.0"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
 	  FinalStateName	  "xFinal"
@@ -168,7 +155,6 @@ Model {
 	  SaveFinalState	  off
 	  SaveCompleteFinalSimState off
 	  SaveFormat		  "Array"
-	  SignalLoggingSaveFormat "ModelDataLogs"
 	  SaveOutput		  on
 	  SaveState		  off
 	  SignalLogging		  on
@@ -187,8 +173,8 @@ Model {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  5
-	  Version		  "1.11.0"
+	  $ObjectID		  4
+	  Version		  "1.10.0"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    8
@@ -239,11 +225,10 @@ Model {
 	  BufferReusableBoundary  on
 	  SimCompilerOptimization "Off"
 	  AccelVerboseBuild	  off
-	  AccelParallelForEachSubsystem	on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  6
-	  Version		  "1.11.0"
+	  $ObjectID		  5
+	  Version		  "1.10.0"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
 	  ArrayBoundsChecking	  "none"
@@ -314,7 +299,6 @@ Model {
 	  ModelReferenceExtraNoncontSigs "error"
 	  StateNameClashWarn	  "warning"
 	  SimStateInterfaceChecksumMismatchMsg "warning"
-	  SimStateOlderReleaseMsg "error"
 	  InitInArrayFormatMsg	  "warning"
 	  StrictBusMsg		  "ErrorLevel1"
 	  BusNameAdapt		  "WarnAndRepair"
@@ -328,8 +312,8 @@ Model {
 	  SFTransitionOutsideNaturalParentDiag "warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  7
-	  Version		  "1.11.0"
+	  $ObjectID		  6
+	  Version		  "1.10.0"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
 	  ProdBitPerInt		  32
@@ -365,8 +349,8 @@ Model {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  8
-	  Version		  "1.11.0"
+	  $ObjectID		  7
+	  Version		  "1.10.0"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
 	  EnableParallelModelReferenceBuilds off
@@ -380,8 +364,8 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  9
-	  Version		  "1.11.0"
+	  $ObjectID		  8
+	  Version		  "1.10.0"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
 	  SFSimEcho		  on
@@ -395,8 +379,8 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  10
-	  Version		  "1.11.0"
+	  $ObjectID		  9
+	  Version		  "1.10.0"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    8
@@ -440,7 +424,6 @@ Model {
 	  GenerateTraceReportEml  off
 	  GenerateCodeInfo	  off
 	  GenerateSLWebview	  off
-	  GenerateCodeMetricsReport off
 	  RTWCompilerOptimization "Off"
 	  CheckMdlBeforeBuild	  "Off"
 	  CustomRebuildMode	  "OnUpdate"
@@ -448,8 +431,8 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      11
-	      Version		      "1.11.0"
+	      $ObjectID		      10
+	      Version		      "1.10.0"
 	      Array {
 		Type			"Cell"
 		Dimension		21
@@ -513,8 +496,8 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      12
-	      Version		      "1.11.0"
+	      $ObjectID		      11
+	      Version		      "1.10.0"
 	      Array {
 		Type			"Cell"
 		Dimension		16
@@ -542,8 +525,6 @@ Model {
 	      TargetFunctionLibrary   "ANSI_C"
 	      UtilityFuncGeneration   "Auto"
 	      ERTMultiwordTypeDef     "System defined"
-	      FunctionExecutionProfile off
-	      CodeExecutionProfiling  off
 	      ERTCodeCoverageTool     "None"
 	      ERTMultiwordLength      256
 	      MultiwordLength	      2048
@@ -589,7 +570,6 @@ Model {
 	      RTWCAPISignals	      off
 	      RTWCAPIParams	      off
 	      RTWCAPIStates	      off
-	      RTWCAPIRootIO	      off
 	      GenerateASAP2	      off
 	    }
 	    PropName		    "Components"
@@ -599,13 +579,13 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 200, 197, 1080, 827 ] 
+      ConfigPrmDlgPosition    " [ 200, 197, 1080, 827 ] "
     }
     PropName		    "ConfigurationSets"
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    2
+    $ObjectID		    1
   }
   BlockDefaults {
     ForegroundColor	    "black"
@@ -640,6 +620,42 @@ Model {
   }
   BlockParameterDefaults {
     Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      LockScale		      off
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+      PreserveConstantTs      off
+    }
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchInputForFeedbackSignals off
+      Interpolate	      on
+    }
+    Block {
       BlockType		      Outport
       Port		      "1"
       OutMin		      "[]"
@@ -655,6 +671,13 @@ Model {
       SourceOfInitialOutputValue "Dialog"
       OutputWhenDisabled      "held"
       InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+      SFunctionDeploymentMode off
     }
     Block {
       BlockType		      Scope
@@ -695,10 +718,13 @@ Model {
       Variant		      off
       GeneratePreprocessorConditionals off
     }
+    Block {
+      BlockType		      Terminator
+    }
   }
   System {
     Name		    "MAVNode_UDPTest"
-    Location		    [1552, 252, 2301, 915]
+    Location		    [2, 74, 1347, 707]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -712,18 +738,18 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "106"
+    SIDHighWatermark	    "109"
     Block {
       BlockType		      SubSystem
       Name		      "Attitude Message"
       SID		      "7"
       Ports		      [0, 6]
       Position		      [185, 130, 340, 285]
-      InitFcn		      "IP = get_param(gcb,'IP')                           \nstring = ['http://', IP, ':4334/1/1/30']   "
-      "        \nport = urlread(string);                            \nset_param([gcb, '/UDP Receive'], 'Port',port);   "
-      "  \nset_param([gcb, '/UDP Receive'], 'LocalPort',port);"
-      StopFcn		      "IP = get_param(gcb,'IP');                       \nport = get_param([gcb, '/UDP Receive'], 'Port'"
-      ");\nurlread(['http://', IP, ':4334/', port]);       "
+      InitFcn		      "IP = get_param(gcb,'IP')                                    \nstring = ['http://', IP, ':4334/re"
+      "questStream/1/1/ATTITUDE']\nport = urlread(string);                                     \nset_param([gcb, '/UDP "
+      "Receive'], 'Port',port);              \nset_param([gcb, '/UDP Receive'], 'LocalPort',port);         "
+      StopFcn		      "IP = get_param(gcb,'IP');                                \nport = get_param([gcb, '/UDP Receive'"
+      "], 'Port');         \nurlread(['http://', IP, ':4334/terminateStream/', port]);"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -746,7 +772,7 @@ Model {
       MaskValueString	      "127.0.0.1"
       System {
 	Name			"Attitude Message"
-	Location		[525, 320, 1127, 759]
+	Location		[504, 199, 1106, 638]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -779,6 +805,8 @@ Model {
 	  Ports			  [0, 2]
 	  Position		  [25, 119, 135, 166]
 	  LibraryVersion	  "1.84"
+	  DialogController	  "instrumentcreatedialog"
+	  DialogControllerArgs	  "DataTag0"
 	  SourceBlock		  "instrumentlib/UDP Receive"
 	  SourceType		  "UDP Receive"
 	  Host			  "0.0.0.0"
@@ -883,16 +911,214 @@ Model {
       }
     }
     Block {
+      BlockType		      Constant
+      Name		      "Constant"
+      SID		      "108"
+      Position		      [750, 145, 780, 175]
+      Value		      "1500"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "HTTP Send"
+      SID		      "107"
+      Ports		      [8]
+      Position		      [975, 134, 1045, 396]
+      LibraryVersion	      "1.31"
+      PermitHierarchicalResolution "ExplicitOnly"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskType		      "Stateflow"
+      MaskDescription	      "Embedded MATLAB block"
+      MaskSelfModifiable      on
+      MaskDisplay	      "disp('httpSend');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"HTTP Send"
+	Location		[257, 457, 812, 717]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"24"
+	Block {
+	  BlockType		  Inport
+	  Name			  "c1"
+	  SID			  "107::1"
+	  Position		  [20, 101, 40, 119]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "c2"
+	  SID			  "107::18"
+	  Position		  [20, 136, 40, 154]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "c3"
+	  SID			  "107::19"
+	  Position		  [20, 171, 40, 189]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "c4"
+	  SID			  "107::20"
+	  Position		  [20, 206, 40, 224]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "c5"
+	  SID			  "107::21"
+	  Position		  [20, 246, 40, 264]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "c6"
+	  SID			  "107::22"
+	  Position		  [20, 281, 40, 299]
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "c7"
+	  SID			  "107::23"
+	  Position		  [20, 316, 40, 334]
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "c8"
+	  SID			  "107::24"
+	  Position		  [20, 351, 40, 369]
+	  Port			  "8"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  SID			  "107::15"
+	  Ports			  [1, 1]
+	  Position		  [270, 100, 320, 140]
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  " SFunction "
+	  SID			  "107::14"
+	  Tag			  "Stateflow S-Function MAVNode_UDPTest 2"
+	  Ports			  [8, 1]
+	  Position		  [180, 105, 230, 285]
+	  FunctionName		  "sf_sfun"
+	  PortCounts		  "[8 1]"
+	  EnableBusSupport	  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  SID			  "107::17"
+	  Position		  [460, 111, 480, 129]
+	}
+	Line {
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "c1"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "c2"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "c3"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "c4"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "c5"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "c6"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "c7"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "c8"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  8
+	}
+	Line {
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
       BlockType		      SubSystem
       Name		      "Raw IMU Message"
       SID		      "92"
       Ports		      [0, 9]
       Position		      [190, 369, 345, 641]
-      InitFcn		      "IP = get_param(gcb,'IP')                           \nstring = ['http://', IP, ':4334/1/1/27']   "
-      "        \nport = urlread(string);                            \nset_param([gcb, '/UDP Receive'], 'Port',port);   "
-      "  \nset_param([gcb, '/UDP Receive'], 'LocalPort',port);"
-      StopFcn		      "IP = get_param(gcb,'IP');                       \nport = get_param([gcb, '/UDP Receive'], 'Port'"
-      ");\nurlread(['http://', IP, ':4334/', port]);       "
+      InitFcn		      "IP = get_param(gcb,'IP')                                   \nstring = ['http://', IP, ':4334/req"
+      "uestStream/1/1/RAW_IMU']\nport = urlread(string);                                    \nset_param([gcb, '/UDP Rec"
+      "eive'], 'Port',port);             \nset_param([gcb, '/UDP Receive'], 'LocalPort',port);        "
+      StopFcn		      "IP = get_param(gcb,'IP');                                \nport = get_param([gcb, '/UDP Receive'"
+      "], 'Port');         \nurlread(['http://', IP, ':4334/terminateStream/', port]);"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -948,6 +1174,8 @@ Model {
 	  Ports			  [0, 2]
 	  Position		  [25, 119, 135, 166]
 	  LibraryVersion	  "1.84"
+	  DialogController	  "instrumentcreatedialog"
+	  DialogControllerArgs	  "DataTag1"
 	  SourceBlock		  "instrumentlib/UDP Receive"
 	  SourceType		  "UDP Receive"
 	  Host			  "0.0.0.0"
@@ -1101,8 +1329,8 @@ Model {
       Ports		      [6]
       Position		      [400, 135, 460, 280]
       Floating		      off
-      Location		      [1281, 48, 2561, 1023]
-      Open		      on
+      Location		      [29, 83, 1309, 1058]
+      Open		      off
       NumInputPorts	      "6"
       ZoomMode		      "xonly"
       List {
@@ -1195,7 +1423,7 @@ Model {
       Ports		      []
       Position		      [105, 45, 166, 90]
       AttributesFormatString  "%<SimulationPace> sec/sec"
-      LibraryVersion	      "1.71"
+      LibraryVersion	      "1.70"
       SourceBlock	      "aerolibanimutils/Simulation Pace"
       SourceType	      "Simulation Pace"
       SimulationPace	      "1"
@@ -1293,9 +1521,357 @@ Model {
       DstBlock		      "Scope4"
       DstPort		      3
     }
+    Line {
+      SrcBlock		      "Constant"
+      SrcPort		      1
+      Points		      [150, 0]
+      Branch {
+	DstBlock		"HTTP Send"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 30]
+	Branch {
+	  DstBlock		  "HTTP Send"
+	  DstPort		  2
+	}
+	Branch {
+	  Points		  [0, 30]
+	  Branch {
+	    DstBlock		    "HTTP Send"
+	    DstPort		    3
+	  }
+	  Branch {
+	    Points		    [0, 30]
+	    Branch {
+	      DstBlock		      "HTTP Send"
+	      DstPort		      4
+	    }
+	    Branch {
+	      Points		      [0, 30]
+	      Branch {
+		DstBlock		"HTTP Send"
+		DstPort			5
+	      }
+	      Branch {
+		Points			[0, 30]
+		Branch {
+		  DstBlock		  "HTTP Send"
+		  DstPort		  6
+		}
+		Branch {
+		  Points		  [0, 30]
+		  Branch {
+		    DstBlock		    "HTTP Send"
+		    DstPort		    7
+		  }
+		  Branch {
+		    Points		    [0, 30]
+		    DstBlock		    "HTTP Send"
+		    DstPort		    8
+		  }
+		}
+	      }
+	    }
+	  }
+	}
+      }
+    }
     Annotation {
       Name		      "See http://code.google.com/p/mavnode/wiki/Introduction for help!"
       Position		      [348, 106]
     }
+  }
+}
+MatData {
+  NumRecords		  2
+  DataRecord {
+    Tag			    DataTag1
+    Data		    "  %)30     .    :     8    (     0         %    \"     $    !     0         .    .     8    (    !     "
+    "     %    \"     $    %     0         0    !0   '5D<')B    "
+  }
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    :     8    (     0         %    \"     $    !     0         .    .     8    (    !     "
+    "     %    \"     $    %     0         0    !0   '5D<')B    "
+  }
+}
+# Finite State Machines
+#
+#    Stateflow Version 7.5 (R2010a) dated Jul 24 2010, 06:19:54
+#
+#
+
+
+Stateflow {
+  machine {
+    id			    1
+    name		    "MAVNode_UDPTest"
+    created		    "22-Jan-2013 15:28:20"
+    isLibrary		    0
+    firstTarget		    15
+    sfVersion		    75014000.000003
+  }
+  chart {
+    id			    2
+    name		    "HTTP Send"
+    windowPosition	    [300.747 330 200.25 189.75]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 1366 768 1.333333333333333]
+    treeNode		    [0 3 0 0]
+    firstTransition	    5
+    firstJunction	    4
+    viewObj		    2
+    machine		    1
+    toolbarMode		    LIBRARY_TOOLBAR
+    subviewS {
+    }
+    ssIdHighWaterMark	    12
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    6
+    chartFileNumber	    2
+    disableImplicitCasting  1
+    eml {
+      name		      "httpSend"
+    }
+  }
+  state {
+    id			    3
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    2
+    treeNode		    [2 0 0 0]
+    superState		    SUBCHART
+    subviewer		    2
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function httpSend(c1,c2,c3,c4,c5,c6,c7,c8)\n%#eml\n\nstr = 'http://127.0.0.1:4334/send/1/1/RC_CHA"
+      "NNELS_OVERRIDE';\nstr = [str '?target_system=' 1];\nstr = [str '&target_component=' 1];\nstr = [str '&chan1_raw="
+      "' c1];\nstr = [str '&chan2_raw=' c2];\nstr = [str '&chan3_raw=' c3];\nstr = [str '&chan4_raw=' c4];\nstr = [str "
+      "'&chan5_raw=' c5];\nstr = [str '&chan6_raw=' c6];\nstr = [str '&chan7_raw=' c7];\nstr = [str '&chan8_raw=' c8];\n"
+      "\nurlread(str);"
+      editorLayout	      "100 M4x1[207 126 1080 733]"
+    }
+  }
+  junction {
+    id			    4
+    position		    [23.5747 49.5747 7]
+    chart		    2
+    linkNode		    [2 0 0]
+    subviewer		    2
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    5
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [32.125 19.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      4
+      intersection	      [7 0 -1 -1 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    2
+    linkNode		    [2 0 0]
+    dataLimits		    [23.575 23.575 14.625 34.575]
+    subviewer		    2
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  data {
+    id			    6
+    ssIdNumber		    4
+    name		    "c1"
+    linkNode		    [2 0 7]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    7
+    ssIdNumber		    6
+    name		    "c2"
+    linkNode		    [2 6 8]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    8
+    ssIdNumber		    7
+    name		    "c3"
+    linkNode		    [2 7 9]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    9
+    ssIdNumber		    8
+    name		    "c4"
+    linkNode		    [2 8 10]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    10
+    ssIdNumber		    9
+    name		    "c5"
+    linkNode		    [2 9 11]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    11
+    ssIdNumber		    10
+    name		    "c6"
+    linkNode		    [2 10 12]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    12
+    ssIdNumber		    11
+    name		    "c7"
+    linkNode		    [2 11 13]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    13
+    ssIdNumber		    12
+    name		    "c8"
+    linkNode		    [2 12 0]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  instance {
+    id			    14
+    name		    "HTTP Send"
+    machine		    1
+    chart		    2
+  }
+  target {
+    id			    15
+    name		    "sfun"
+    description		    "Default Simulink S-Function Target."
+    machine		    1
+    linkNode		    [1 0 0]
   }
 }

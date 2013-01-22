@@ -1,11 +1,11 @@
 var mavlink = require("./mavlink");
 var dgram = require("dgram");
-var http = require('http');
+var httpServer = require('./httpServer');
 var url = require('url');
 var SerialPort = require("serialport").SerialPort
 
 // ------- Configuration Section -------
-var DEBUG = 0;	//Debug Level
+var DEBUG = 2;	//Debug Level
 				//	0 - Off
 				// 	1 - Errors
 				//	2 - Errors + Useful Info
@@ -118,6 +118,15 @@ myMav.on("checksumFail", function(msgid, msgsum, calcsum, recvsum) {
 	}
 });
 
+//If a message has been created locally (from a non-MAVLink input stream), send straight to APM
+myMav.on("messageCreated", function(message) {
+	if (DEBUG > 1) {
+		console.log("Message ID " + message.id + " from Simulink to APM");
+	}
+	server.send(message.buffer,0,message.buffer.length,APM_PORT, APM_IP, function(err, bytes) {});
+	serialPort.write(message.buffer);
+});
+
 //When MP sends data to APM, send it straight on
 myMav_mp.on("messageReceived", function(message) {
 	//Debugging message
@@ -166,45 +175,88 @@ server_mp.on("message", function (msg, rinfo) {
 });
 
 
-//Very messy HTTP management code
-//TODO: Make this a module on its own, lots more functionality needed...
-http.createServer(function (req, res) {	//Create a server
-	//Always return success and plain text
-	res.writeHead(200, {'Content-Type': 'text/plain'});
-	
-	//Split up the URL
-	//Format should be either
-	//		http://127.0.0.1:4334/sysid/compid/msgid		to subscribe to a message
-	//OR	http://127.0.0.1:4334/port						to unsubscribe from a message
-	elements = url.parse(req.url).pathname.split("/");
-	
-	//Ignore spurious browser requests for icons
-	if (elements[1] == "favicon.ico") {
-		res.end("");
-		return;
+//Below is the set up for the HTTP server
+//		Handlers for requestStream, terminateStream and send
+
+//Request a (UDP) datastream from APM
+//Issue a HTTP request with sysid, compid and message id (text or numeric)
+//A port number is returned (plain text), which corresponds to the port that data will be sent on
+//via UDP.
+//For example:
+//	http://127.0.0.1:4334/requestStream/1/1/27
+//	http://127.0.0.1:4334/requestStream/1/1/ATTITUDE
+httpServer.addHandler("requestStream", function(address, parameters, options) {
+	var sysid = parameters[0];
+	if (sysid <= 0 || sysid > 255) {
+		return "ERROR: System ID " + sysid + " invalid!";
 	}
-	
-	//If first element is a big number (above baseport, which should always be above 255, the highest sysid)
-	//assume we want to delete a stream
-	//TODO: Check theres no other elements
-	//TODO: Just make this better in general!
-	if (elements[1] >= basePort) {
-		removeClient(elements[1]);
-		console.log("Removing forward on port " + elements[1]);
-		res.end("");
-		return;
+	var compid = parameters[1];
+	if (compid <= 0 || compid > 255) {
+		return "ERROR: Component ID " + compid + " invalid!";
 	}
-	
-	//If it wasn't a big number, assume its a request and break up the URL in to its parts
-	sysid = elements[1];
-	compid = elements[2];
-	msgid = elements[3];
+	var msgid = parameters[2];
+	var id = msgid;
+	var idStr = "Message ID " + id;
+	if (isNaN(Number(msgid))) {
+		id = myMav.getMessageID(msgid);
+		idStr = "Message " + msgid;
+	}
+	if (id < 0 || id > 255) {
+		return "ERROR: " + idStr + " invalid!";
+	}
 	
 	//Attemps to add a new client, return (via HTTP) the port number if successful and inform the user (via terminal) of success or failure
-	if ((client = addClient(sysid,compid,msgid,req.connection.remoteAddress)) != null ) {
-		res.end(client.port + "\n");
-		console.log("Forwarding Message ID " + msgid + " to " + req.connection.remoteAddress + ":" + client.port);
+	if ((client = addClient(sysid,compid,id,address)) != null ) {
+		console.log("Forwarding " + idStr + " to " + address + ":" + client.port);
+		return client.port + "\n";
 	} else {
 		console.log("Too many clients connected! (Max: " + maxClients + ")");
+		return "ERROR: Too many clients connected";
 	}
-}).listen(4334, '0.0.0.0');	//Attach server to a port
+});
+
+
+//Remove a data stream (with no error checking on whether or not the stream actually exists!)
+//TODO: Check stream exists first
+//For example:
+//	http://127.0.0.1:4334/terminateStream/30000
+httpServer.addHandler("terminateStream", function(address, parameters, options) {
+	if (parameters[0] >= basePort && parameters[0] <= 65535) {
+		removeClient(parameters[0]);
+		console.log("Removing forward on port " + parameters[0]);
+		return "SUCCESS";
+	} else {
+		return "ERROR";
+	}
+});
+
+
+//A simple (HTTP based) means of sending MAVLink data to APM
+//Construct a URL query containing the sysid, compid and msgid
+//Followed by a GET string of name=value pairs for each field in the message
+//For example:
+//	http://127.0.0.1:4334/send/1/1/ATTITUDE?time_boot_ms=30&roll=0.1&pitch=0.2&yaw=0.3&rollspeed=0.4&pitchspeed=0.5&yawspeed=0.6
+httpServer.addHandler("send", function(address, parameters, options) {
+var sysid = parameters[0];
+	if (sysid <= 0 || sysid > 255) {
+		return "ERROR: System ID " + sysid + " invalid!";
+	}
+	var compid = parameters[1];
+	if (compid <= 0 || compid > 255) {
+		return "ERROR: Component ID " + compid + " invalid!";
+	}
+	var msgid = parameters[2];
+	var id = msgid;
+	var idStr = "Message ID " + id;
+	if (isNaN(Number(msgid))) {
+		id = myMav.getMessageID(msgid);
+		idStr = "Message " + msgid;
+	}
+	if (id < 0 || id > 255) {
+		return "ERROR: " + idStr + " invalid!";
+	}
+	myMav.createMessage(id,options);
+	return "";
+});
+
+httpServer.start();
