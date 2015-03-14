@@ -1,0 +1,24 @@
+{
+  "name": "mavnode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "mavnode.js",
+  "dependencies": {
+    "serialport": "^1.6.1",
+    "xml2js": "^0.2.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/egnerfl/mavnode.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/egnerfl/mavnode/issues"
+  },
+  "homepage": "https://github.com/egnerfl/mavnode"
+}

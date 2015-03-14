@@ -19,8 +19,8 @@ var MP_IP = "127.0.0.1";
 var MP_PORT = 10002;
 
 //Serial port parameters
-var COMPORT = "COM5";
-var BAUD = 115200;
+var COMPORT = "/dev/tty.usbserial-A603J17O";
+var BAUD = 57600;
 // ------- End of Configuration Section -------
 
 //Quick and dirty MAVLink and server set up, one in and one out
