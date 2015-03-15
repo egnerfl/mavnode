@@ -43,4 +43,29 @@ angular.module('mavlink')
 			}
 		}
 
+		$scope.parseVoltage = function(volt) {
+			if (volt) {
+				volt = volt.toString();
+
+				while(volt.length < 5){
+					volt = "0" + volt;
+				}
+
+				return volt.toString().substring(0, 2) + '.' + volt.toString().substring(2);
+			}
+		}
+
+		$scope.parseCurrent = function(cur) {
+			if (cur) {
+				cur = cur.toString();
+
+				while(cur.length < 4){
+					cur = "0" + cur;
+				}
+
+				return cur.toString().substring(0, 2) + '.' + cur.toString().substring(2);
+			}
+		}
+		
+
 	}]);

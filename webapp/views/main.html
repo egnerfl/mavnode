@@ -9,6 +9,16 @@
 	</pre>
 </div>
 <div class="jumbotron">
+	<h2>battery</h2>
+	<p>Battery Voltage: {{ parseVoltage(data.SYS_STATUS.message.voltage_battery) }}V </p>
+	<p>Battery Current: {{ parseCurrent(data.SYS_STATUS.message.current_battery) }}A</p>
+	<p>Battery Remaining: {{ data.SYS_STATUS.message.battery_remaining }}%</p>
+	
+	<pre>
+		{{ data.SYS_STATUS.message }}
+	</pre>
+</div>
+<div class="jumbotron">
 	<h2>other parameters</h2>
 	<h3>call <code>window.getData()</code> for APM object</h3>
 	<pre>
