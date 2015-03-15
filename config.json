@@ -1,0 +1,5 @@
+{
+	"express_port": 3000,
+	"serialPort": "/dev/tty.usbserial-A603J17O",
+	"serialBaudrate": 57600
+}

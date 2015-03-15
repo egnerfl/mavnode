@@ -4,9 +4,11 @@
   "description": "",
   "main": "mavnode.js",
   "dependencies": {
+    "express": "^4.12.2",
+    "mavlink": "omcaree/node-mavlink",
     "serialport": "^1.6.1",
-    "xml2js": "^0.2.8",
-    "mavlink": "omcaree/node-mavlink"
+    "socket.io": "^1.3.5",
+    "xml2js": "^0.2.8"
   },
   "devDependencies": {},
   "scripts": {
