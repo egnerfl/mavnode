@@ -12,11 +12,11 @@ var DEBUG = 0;	//Debug Level
 
 //IP and port of APM
 var APM_IP = "192.168.1.2";
-var APM_PORT = 10001;
+var APM_PORT = 3023;
 
 //IP of Mission Planner
 var MP_IP = "127.0.0.1";
-var MP_PORT = 10002;
+var MP_PORT = 3024;
 
 //Serial port parameters
 var COMPORT = "/dev/tty.usbserial-A603J17O";
