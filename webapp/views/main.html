@@ -1,3 +1,7 @@
 <div class="jumbotron">
-  <p> {{ data }} </p>
+  	<p>Latitude: {{ parseGeo(data.GLOBAL_POSITION_INT.message.lat) }} </p>
+    <p>Longitude: {{ parseGeo(data.GLOBAL_POSITION_INT.message.lon) }} </p>
+    <p>Altitude: {{ data.GLOBAL_POSITION_INT.message.alt }} </p>
+
+    <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
 </div>
