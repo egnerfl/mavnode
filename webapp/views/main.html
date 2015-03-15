@@ -1,7 +1,17 @@
 <div class="jumbotron">
-  	<p>Latitude: {{ parseGeo(data.GLOBAL_POSITION_INT.message.lat) }} </p>
-    <p>Longitude: {{ parseGeo(data.GLOBAL_POSITION_INT.message.lon) }} </p>
-    <p>Altitude: {{ data.GLOBAL_POSITION_INT.message.alt }} </p>
-
-    <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+	<h2>map</h2>
+	<p>Latitude: {{ parseGeo(data.GLOBAL_POSITION_INT.message.lat) }} </p>
+	<p>Longitude: {{ parseGeo(data.GLOBAL_POSITION_INT.message.lon) }} </p>
+	<p>Altitude: {{ data.GLOBAL_POSITION_INT.message.alt }} </p>
+	<ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+	    <pre>
+		{{ data.GLOBAL_POSITION_INT.message }}
+	</pre>
+</div>
+<div class="jumbotron">
+	<h2>other parameters</h2>
+	<h3>call <code>window.getData()</code> for APM object</h3>
+	<pre>
+		{{ data }}
+	</pre>
 </div>
