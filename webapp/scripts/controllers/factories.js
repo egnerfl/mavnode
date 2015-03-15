@@ -1,9 +1,10 @@
-angular.module('mavlink').factory('socket', function() {
-  var socket = io('http://localhost:3000');
+angular.module('mavlink').factory('socket', ['$rootScope', function($rootScope) {
+	var factory = {};
+  factory.socket = io('http://localhost:3000');
 
-  socket.on('message', function (data) {
-    console.log(data);
+    factory.socket.on('message', function (data) {
+		$rootScope.$emit('updateData', data);
 	});
 
-  return socket;
-});
+  return factory;
+}]);

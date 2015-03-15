@@ -8,6 +8,18 @@
  * Controller of the mavlink
  */
 angular.module('mavlink')
-  .controller('MainCtrl', function ($scope, socket) {
+  .controller('MainCtrl', ["$scope", "$rootScope", "socket", function ($scope, $rootScope, socket) {
 
-  });
+  	var localData = {};
+
+
+  	$rootScope.$on('updateData', function(event, data){
+  			localData[data.type] = data;
+
+  			$scope.$apply(function() {
+ 				$scope.data = localData;
+          });
+  	});
+
+ 
+  }]);
