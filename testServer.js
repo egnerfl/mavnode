@@ -32,9 +32,9 @@ io.on('connection', function(socket) {
 
 //Test Data
 fs.readFile(__dirname + '/APMDump.txt', function(err, data) {
+	console.log("APMDump loaded!");
 	var j = 0;
 	var readChunk = function() {
-		console.log("APMDump loaded");
 		for (i = 0; i < 100; i += 2) {
 			var str = data.toString('utf8', j + i, j + i + 2);
 			var ch = parseInt(str, 16);
