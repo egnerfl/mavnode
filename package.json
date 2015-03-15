@@ -5,7 +5,8 @@
   "main": "mavnode.js",
   "dependencies": {
     "serialport": "^1.6.1",
-    "xml2js": "^0.2.8"
+    "xml2js": "^0.2.8",
+    "mavlink": "omcaree/node-mavlink"
   },
   "devDependencies": {},
   "scripts": {
