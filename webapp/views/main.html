@@ -1,3 +1,20 @@
+<div class="jumbotron" ng-model="setCubeAngleTo(data.ATTITUDE.message.roll,data.ATTITUDE.message.pitch, data.ATTITUDE.message.yaw)">
+	<!--ng-model="setCubeAngleTo(data.ATTITUDE.message.roll,data.ATTITUDE.message.pitch, data.ATTITUDE.message.yaw)"-->
+
+	<h2>Altitude</h2>
+	<section class="cube-container">
+		<div id="box" class=" show-front">
+	      <figure class="front">1</figure>
+	      <figure class="back">2</figure>
+	      <figure class="right">3</figure>
+	      <figure class="left">4</figure>
+	      <figure class="top">5</figure>
+	      <figure class="bottom">6</figure>
+	    </div>
+	  </section>
+
+</div>
+
 <div class="jumbotron">
 	<h2>map</h2>
 	<p>Latitude: {{ parseGeo(data.GLOBAL_POSITION_INT.message.lat) }} </p>
