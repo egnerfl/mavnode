@@ -1,5 +1,15 @@
 {
 	"express_port": 3000,
 	"serialPort": "/dev/tty.usbserial-A603J17O",
-	"serialBaudrate": 57600
+	"serialBaudrate": 57600,
+	"video": {
+		"height": 640,
+		"width": 480,
+		"STREAM_PORT": 8082,
+		"WEBSOCKET_PORT": 8084,
+		"STREAM_SECRET": "video",
+		"STREAM_MAGIC_BYTES": "jsmp",
+		"device": "/dev/video0",
+		"format":"video4linux2"
+	}
 }
