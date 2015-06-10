@@ -1,21 +1,4 @@
 <div class="jumbotron">
-	<!--ng-model="setCubeAngleTo(data.ATTITUDE.message.roll,data.ATTITUDE.message.pitch, data.ATTITUDE.message.yaw)"-->
-
-	<h2>Altitude</h2>
-	<section class="cube-container">
-		<div id="box" class=" show-front" style="transform: rotateX({{data.ATTITUDE.message.roll * 10}}deg) rotateY({{data.ATTITUDE.message.roll * 10}}deg) rotateZ({{data.ATTITUDE.message.yaw * 10}}deg);">
-	      <figure class="front">FRONT</figure>
-	      <figure class="back">BACK</figure>
-	      <figure class="right">RIGHT</figure>
-	      <figure class="left">LEFT</figure>
-	      <figure class="top">TOP</figure>
-	      <figure class="bottom">BOTTOM</figure>
-	    </div>
-	  </section>
-
-</div>
-
-<div class="jumbotron">
 	<h2>map</h2>
 	<p>Latitude: {{ parseGeo(data.GLOBAL_POSITION_INT.message.lat) }} </p>
 	<p>Longitude: {{ parseGeo(data.GLOBAL_POSITION_INT.message.lon) }} </p>
