@@ -1,15 +1,15 @@
-<div class="jumbotron">
+<div class="jumbotron" ng-model="setCubeAngleTo(data.ATTITUDE.message.roll,data.ATTITUDE.message.pitch, data.ATTITUDE.message.yaw)">
 	<!--ng-model="setCubeAngleTo(data.ATTITUDE.message.roll,data.ATTITUDE.message.pitch, data.ATTITUDE.message.yaw)"-->
 
 	<h2>Altitude</h2>
 	<section class="cube-container">
-		<div id="box" class=" show-front" style="transform: rotateX({{data.ATTITUDE.message.roll * 10}}deg) rotateY({{data.ATTITUDE.message.roll * 10}}deg) rotateZ({{data.ATTITUDE.message.yaw * 10}}deg);">
-	      <figure class="front">FRONT</figure>
-	      <figure class="back">BACK</figure>
-	      <figure class="right">RIGHT</figure>
-	      <figure class="left">LEFT</figure>
-	      <figure class="top">TOP</figure>
-	      <figure class="bottom">BOTTOM</figure>
+		<div id="box" class=" show-front">
+	      <figure class="front">1</figure>
+	      <figure class="back">2</figure>
+	      <figure class="right">3</figure>
+	      <figure class="left">4</figure>
+	      <figure class="top">5</figure>
+	      <figure class="bottom">6</figure>
 	    </div>
 	  </section>
 

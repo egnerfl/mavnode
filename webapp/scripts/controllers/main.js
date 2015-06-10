@@ -66,6 +66,18 @@ angular.module('mavlink')
 				return cur.toString().substring(0, 2) + '.' + cur.toString().substring(2);
 			}
 		}
+
+		$scope.setCubeAngleTo = function(x,y,z){
+			var Cube = $('#box');
+
+			x = x * 1000;
+			y = y * 1000;
+			z = z * 1000;
+
+			$(Cube).css("transform", "rotateX( "+ x +"deg) rotateY( "+ y +"deg) rotateZ( "+ z +"deg)");
+			console.log("x " + x + " y " + y + " z " + z);
+
+		}
 		
 
 	}]);
