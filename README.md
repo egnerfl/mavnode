@@ -2,9 +2,11 @@
 
 ##Software Configuration
 
-1. Install node.js
+1. Install node.js (https://nodejs.org/download/ or via brew install node)
 2. go in the mavnode root directory
 3. run npm install
+4. Install bower (npm install -g bower)
+5. run bower (bower install)
 
 ##Hardware Configuration
 
