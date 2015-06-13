@@ -26,3 +26,7 @@
 You need to have root access to use mavnode, just run (mac or linux) sudo node server.js in the mavnode root directory
 
 To test mavnode without an mavlink capable device use the TestServer.js file
+
+#Demo
+
+https://www.youtube.com/watch?v=mcUmTC2BGtc
