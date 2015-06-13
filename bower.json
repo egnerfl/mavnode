@@ -1,12 +1,12 @@
 {
   "name": "mavnode",
   "main": "mavnode.js",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "homepage": "https://github.com/egnerfl/mavnode",
   "authors": [
     "Florian Egner <egner.florian@gmail.com>"
   ],
-  "license": "MIT",
+  "license": "GPLv3",
   "ignore": [
     "**/.*",
     "node_modules",
